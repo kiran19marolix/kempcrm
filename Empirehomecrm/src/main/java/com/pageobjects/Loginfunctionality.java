@@ -1,5 +1,7 @@
 package com.pageobjects;
 
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -31,5 +33,11 @@ public class Loginfunctionality extends Basetest {
 	   loginbutton.click();
    }
    
-	
+	public void verifylogindata(String username1, String password1) {
+		userid.sendKeys(username1); 
+		   pass.sendKeys(password1);
+		   loginbutton.click();
+    String str = driver.getCurrentUrl();		   
+    assertEquals("http://empirehome.myprojectsonline.co.in/EmpireHome/Dashboard", str);	   
+	}
 }

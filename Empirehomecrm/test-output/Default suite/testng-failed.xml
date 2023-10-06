@@ -5,9 +5,8 @@
     <classes>
       <class name="com.testcases.Logintest">
         <methods>
-          <include name="loginvalidation"/>
+          <include name="logindatatest" invocation-numbers="1 2 3 4 5"/>
           <include name="setup"/>
-          <include name="teardown"/>
         </methods>
       </class> <!-- com.testcases.Logintest -->
     </classes>

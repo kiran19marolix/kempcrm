@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 
 import com.base.Basetest;
 import com.pageobjects.Loginfunctionality;
+import com.utils.Utils;
 
 public class Logintest extends Basetest {
 
@@ -33,13 +34,18 @@ public class Logintest extends Basetest {
 		String urltest = driver.getCurrentUrl();
 		Assert.assertEquals(urltest, "http://empirehome.myprojectsonline.co.in/EmpireHome/Dashboard");
 		
-
 	}
-
-	@AfterMethod
+	
+	@Test(dataProvider = "addData", dataProviderClass = Utils.class)
+    public void logindatatest(String user, String pwd) {
+		lf.verifylogindata(user, pwd);
+    	
+    }
+    
+	/*@AfterMethod
 	public void teardown() {
 		  extentreports.flush();
 		//driver.close();
 
-	}
+	}*/
 }
