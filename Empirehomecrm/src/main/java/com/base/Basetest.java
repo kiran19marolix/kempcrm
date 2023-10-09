@@ -59,9 +59,9 @@ public class Basetest {
 			driver = new FirefoxDriver();
 		}
 		driver.manage().window().maximize();
-		driver.manage().timeouts().pageLoadTimeout(15,TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
 		driver.get(prop.getProperty("url"));
-		driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.manage().deleteAllCookies();
 		//extentreports.flush();
 
