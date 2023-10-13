@@ -40,6 +40,10 @@ public class HolidaysPage extends Basetest{
 	
 	@FindBy(xpath="//tbody/tr[1]/td[5]/a[2]/button[1]/i[1]")
 	WebElement delete;
+
+	@FindBy(xpath="//button[@class='swal-button swal-button--yes']")
+	WebElement yes;
+	
 	public HolidaysPage () {
 	PageFactory.initElements(driver, this);
 	}
@@ -53,19 +57,30 @@ public class HolidaysPage extends Basetest{
 		anew.click();
 		Thread.sleep(3000);
 		Utils.mouseHoverandClickOnElement(driver, hdate);
+		Thread.sleep(3000);
 		hdate.sendKeys(prop.getProperty("HolidayDate"));
+		Thread.sleep(3000);
 		hname.sendKeys(prop.getProperty("HolidayName"));
+		Thread.sleep(3000);
 		hdesc.sendKeys(prop.getProperty("HolidayDescription"));
+		Thread.sleep(3000);
 		sve.click();
 		//hdate.sendKeys(null);
-		driver.navigate().to("http://empirehome.myprojectsonline.co.in/Master/HolidayTypedata?id=23");
+		driver.navigate().to("http://empirehome.myprojectsonline.co.in/Master/HolidayTypedata");
+		Thread.sleep(3000);
 		hdate.sendKeys(prop.getProperty("edithdate"));
+		Thread.sleep(3000);
 		hdate.sendKeys(prop.getProperty("edithname"));
+		Thread.sleep(3000);
 		hdate.sendKeys(prop.getProperty("edithdes"));
+		Thread.sleep(3000);
 		sve.click();
 		driver.navigate().to("http://empirehome.myprojectsonline.co.in/Master/Holidays");
 		Thread.sleep(3000);
 		delete.click();
+		Thread.sleep(3000);
+		yes.click();
+		
 		
 	}
 }
