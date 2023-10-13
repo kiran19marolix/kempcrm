@@ -29,20 +29,15 @@ public class AddProductTest extends Basetest{
   	lp = new Loginfunctionality();
   	lp.verifylogin();
     product = new AddProductPage();
-  	
-  	
     }
      
      @Test(dataProvider = "dataload", dataProviderClass = AddProductTest.class)
      public void addp(String modelnumber, String itemtitle, String itemdescription, String height, String width, String breadth, String colour, String actualprice, String quantity ) throws Exception {
      product.verifyaddproduct(modelnumber, itemtitle, itemdescription, height, width, breadth, colour, actualprice, quantity); 
-  	   String urltest = driver.getCurrentUrl();
-  	  Assert.assertEquals(urltest, "http://empirehome.myprojectsonline.co.in/Inventory/All");
+  	 String urltest = driver.getCurrentUrl();
+  	 Assert.assertEquals(urltest, "http://empirehome.myprojectsonline.co.in/Inventory/All");
      }
      
-		// TODO Auto-generated method stub
-		
-	
 	@AfterMethod
      public void teardown() {
   	 //driver.close();

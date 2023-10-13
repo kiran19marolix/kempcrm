@@ -11,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.base.Basetest;
+import com.utils.Utils;
 
 public class AddProductPage extends Basetest {
 	@FindBy(xpath="//span[@class='pe-7s-keypad']")
@@ -85,8 +86,9 @@ public class AddProductPage extends Basetest {
     	qty.sendKeys(quantity);
 
     	Thread.sleep(3000);
-    	Actions ac = new Actions(driver);
-    	ac.moveToElement(img).click().perform();
+    	Utils.mouseHoverandClickOnElement(driver, img);
+//    	Actions ac = new Actions(driver);
+//    	ac.moveToElement(img).click().perform();
     	
      	Robot rb = new Robot();
     	rb.delay(2000);
