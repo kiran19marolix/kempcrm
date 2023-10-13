@@ -27,7 +27,7 @@ public class HolidaysTest extends Basetest{
 	lp.verifylogin();
 	hp.verifyholiday();
 	String urltest = driver.getCurrentUrl();
-	Assert.assertEquals(urltest, "http://empirehome.myprojectsonline.co.in/Master/HolidayTypedata");
+	Assert.assertEquals(urltest, "http://empirehome.myprojectsonline.co.in/Master/Holidays");
 	}
 	
 	@AfterMethod
